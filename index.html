@@ -94,100 +94,97 @@
         </div>
 
         <!-- Donation Widget -->
-        <div class="md:col-span-1">
-            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 sticky top-8">
-                
-                <h3 class="text-xl font-medium text-slate-900 mb-6 text-center">Support the Fund</h3>
-                
-                <!-- Progress Tracker -->
-                <div class="mb-8">
-                    <div class="flex justify-between text-sm mb-3">
-                        <span class="font-semibold text-slate-800">$25 raised</span>
-                        <span class="text-slate-500">Goal: $500</span>
-                    </div>
-                    <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
-                        <div class="bg-memorial-500 h-3 rounded-full progress-bar" style="width: 50%" data-target="5%"></div>
-                    </div>
-                </div>
-
-                <!-- Single Direct Stripe Button -->
-                <!-- Replace the href with your actual Stripe Payment Link -->
-                <a href="https://donate.stripe.com/bJe3cp6TB663c9IggJ33W00" target="_blank" class="block w-full bg-slate-900 text-white text-center font-medium text-lg py-4 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-200 mb-2">
-                    Donate via Stripe
-                </a>
-
-                <p class="text-xs text-center text-slate-400 mb-6 flex items-center justify-center gap-1">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                    Secure payment processing
-                </p>
-
-                <!-- Alternative Giving Options -->
-                <div class="relative flex py-4 items-center">
-                    <div class="flex-grow border-t border-slate-200"></div>
-                    <span class="flex-shrink-0 mx-4 text-slate-400 text-xs font-medium uppercase tracking-wider">Other ways to give</span>
-                    <div class="flex-grow border-t border-slate-200"></div>
-                </div>
-
-                <div class="space-y-3 mt-2">
-                    <a href="https://www.amazon.com/registries/gl/guest-view/1N2ZDUT58D41W?ref_=cm_sw_r_apin_ggr-subnav-share_5EFPY16ZSCK57QAVYG9R&language=en-US" target="_blank" class="flex items-center justify-center gap-2 w-full bg-amber-50 text-amber-800 border border-amber-200 text-center font-medium text-sm py-3 rounded-xl hover:bg-amber-100 transition-all duration-200">
-                        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-                        Donate to Amazon Gift Card
-                    </a>
-                    
-                    <a href="https://www.amazon.com/hz/wishlist/ls/23KTNOGD3471K/ref=nav_wishlist_lists_3" target="_blank" class="flex items-center justify-center gap-2 w-full bg-rose-50 text-rose-800 border border-rose-200 text-center font-medium text-sm py-3 rounded-xl hover:bg-rose-100 transition-all duration-200">
-                        <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                        Nationwide NICU Wishlist
-                    </a>
-                </div>
-
+<div class="md:col-span-1">
+    <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 sticky top-8">
+        
+        <h3 class="text-xl font-medium text-slate-900 mb-6 text-center">Support the Fund</h3>
+        
+        <!-- Progress Tracker -->
+        <div class="mb-8">
+            <div class="flex justify-between text-sm mb-3">
+                <span class="font-semibold text-slate-800">$25 raised</span>
+                <span class="text-slate-500">Goal: $500</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                <!-- Switched to bg-amber-600 or hex color #c86d51 for Warm Terracotta -->
+                <div class="h-3 rounded-full progress-bar transition-all duration-1000 ease-out" style="width: 5%; background-color: #c86d51;" data-target="5%"></div>
             </div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-10 text-center text-slate-500 text-sm mt-12">
-        <p>Created with love in memory of Auggie.</p>
-    </footer>
+        <!-- Single Direct Stripe Button (Added id="donate-link") -->
+        <a id="donate-link" href="https://donate.stripe.com/bJe3cp6TB663c9IggJ33W00" target="_blank" class="block w-full bg-slate-900 text-white text-center font-medium text-lg py-4 rounded-xl hover:bg-slate-800 hover:shadow-lg transition-all duration-200 mb-2">
+            Donate via Stripe
+        </a>
 
-    <!-- Interactive Script -->
+        <p class="text-xs text-center text-slate-400 mb-6 flex items-center justify-center gap-1">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+            Secure payment processing
+        </p>
+
+        <!-- Alternative Giving Options -->
+        <div class="relative flex py-4 items-center">
+            <div class="flex-grow border-t border-slate-200"></div>
+            <span class="flex-shrink-0 mx-4 text-slate-400 text-xs font-medium uppercase tracking-wider">Other ways to give</span>
+            <div class="flex-grow border-t border-slate-200"></div>
+        </div>
+
+        <div class="space-y-3 mt-2">
+            <a href="https://www.amazon.com/registries/gl/guest-view/1N2ZDUT58D41W?ref_=cm_sw_r_apin_ggr-subnav-share_5EFPY16ZSCK57QAVYG9R&language=en-US" target="_blank" class="flex items-center justify-center gap-2 w-full bg-amber-50 text-amber-800 border border-amber-200 text-center font-medium text-sm py-3 rounded-xl hover:bg-amber-100 transition-all duration-200">
+                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                Donate to Amazon Gift Card
+            </a>
+            
+            <a href="https://www.amazon.com/hz/wishlist/ls/23KTNOGD3471K/ref=nav_wishlist_lists_3" target="_blank" class="flex items-center justify-center gap-2 w-full bg-rose-50 text-rose-800 border border-rose-200 text-center font-medium text-sm py-3 rounded-xl hover:bg-rose-100 transition-all duration-200">
+                <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                Nationwide NICU Wishlist
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-200 py-10 text-center text-slate-500 text-sm mt-12">
+    <p>Created with love in memory of Auggie.</p>
+</footer>
+
+<!-- Interactive Script -->
     <script>
-        // Set progress bar width on load
-        window.addEventListener('DOMContentLoaded', () => {
-            const bar = document.querySelector('.progress-bar');
+    window.addEventListener('DOMContentLoaded', () => {
+        const bar = document.querySelector('.progress-bar');
+        if (bar) {
             setTimeout(() => {
                 bar.style.width = bar.getAttribute('data-target');
-            }, 400); 
-        });
+            }, 300); 
+        }
+    });
 
-        // -------------------------------------------------------------
-        // PASTE YOUR ACTUAL STRIPE PAYMENT LINK BETWEEN THE QUOTES BELOW:
-        // -------------------------------------------------------------
-        const myStripeLink = "https://donate.stripe.com/bJe3cp6TB663c9IggJ33W00";
-
-        const buttons = document.querySelectorAll('.tier-btn');
-        const donateLink = document.getElementById('donate-link');
-        
-        // Connect Stripe link to main button
+    const myStripeLink = "https://donate.stripe.com/bJe3cp6TB663c9IggJ33W00";
+    const buttons = document.querySelectorAll('.tier-btn');
+    const donateLink = document.getElementById('donate-link');
+    
+    if (donateLink) {
         donateLink.href = myStripeLink;
+    }
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                buttons.forEach(b => {
-                    b.className = 'tier-btn border-2 border-slate-200 rounded-xl py-3 font-medium text-slate-700 hover:border-memorial-500 hover:text-memorial-600 hover:bg-memorial-50 transition-all duration-200';
-                });
-                
-                btn.className = 'tier-btn border-2 border-memorial-500 rounded-xl py-3 font-semibold text-memorial-700 bg-memorial-50 transition-all duration-200';
-                
-                const amount = btn.getAttribute('data-amount');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => {
+                b.className = 'tier-btn border-2 border-slate-200 rounded-xl py-3 font-medium text-slate-700 hover:border-slate-400 hover:text-slate-900 transition-all duration-200';
+            });
+            
+            btn.className = 'tier-btn border-2 border-slate-900 rounded-xl py-3 font-semibold text-slate-900 bg-slate-50 transition-all duration-200';
+            
+            const amount = btn.getAttribute('data-amount');
+            if (donateLink) {
                 if (amount === 'Other') {
                     donateLink.textContent = 'Donate Custom Amount';
                 } else {
                     donateLink.textContent = `Donate $${amount}`;
                 }
-                
-                donateLink.href = myStripeLink;
-            });
+            }
         });
+    });
     </script>
 </body>
 </html>
