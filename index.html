@@ -13,13 +13,30 @@
             background-image: radial-gradient(#cbd5e1 1px, transparent 1px); 
             background-size: 24px 24px; 
         }
+        
         /* Reliable Custom Terracotta Styles */
         .bg-terracotta { background-color: #c66b3d; }
         .bg-terracotta:hover { background-color: #a25630; }
         .border-terracotta { border-color: #c66b3d; }
+
+        /* Flame Gradient & Glow for Progress Bar */
         .progress-bar-fill {
-            background-color: #c66b3d;
+            background: linear-gradient(90deg, #c66b3d 0%, #d97706 70%, #f59e0b 100%);
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
             transition: width 1.2s ease-out;
+        }
+
+        /* Subtle Vibration Animation */
+        @keyframes subtle-vibrate {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-0.5px, 0.5px); }
+            50% { transform: translate(0.5px, -0.5px); }
+            75% { transform: translate(-0.5px, -0.5px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .animate-vibrate {
+            animation: subtle-vibrate 0.15s infinite ease-in-out;
         }
     </style>
 </head>
@@ -79,7 +96,7 @@
             </p>
         </div>
 
-        <!-- Donation Widget -->
+        <!-- Donation Widget with Flame & Vibration Preview -->
         <div class="md:col-span-1">
             <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 sticky top-8">
                 
@@ -88,12 +105,28 @@
                 <!-- Progress Tracker -->
                 <div class="mb-8">
                     <div class="flex justify-between text-sm mb-3">
-                        <span class="font-semibold text-slate-800">$435 raised</span>
-                        <span class="text-slate-500">Goal: $500</span>
+                        <span class="font-semibold text-slate-800 flex items-center gap-1">
+                            $435 raised <span class="animate-bounce">🔥</span>
+                        </span>
+                        <span class="text-slate-500 font-medium">Goal: $500</span>
                     </div>
-                    <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
-                        <div id="progress-bar" class="h-3 rounded-full progress-bar-fill" style="width: 0%;" data-target="87%"></div>
+
+                    <!-- Vibrating Container -->
+                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden relative shadow-inner animate-vibrate">
+                        
+                        <!-- Progress Bar with Flame Glow -->
+                        <div id="progress-bar" 
+                             class="h-4 rounded-full progress-bar-fill relative flex items-center justify-end" 
+                             style="width: 0%;" 
+                             data-target="87%">
+                            
+                            <!-- Flame Tip Highlights -->
+                            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-amber-400 rounded-full blur-[2px] animate-pulse opacity-90 shadow-[0_0_12px_#f59e0b]"></div>
+                            <div class="absolute right-0 top-1/2 -translate-y-1/2 text-xs translate-x-1 select-none pointer-events-none">🔥</div>
+                        </div>
+
                     </div>
+                
                 </div>
 
                 <!-- Single Direct Stripe Button -->
@@ -143,7 +176,7 @@
                 const target = bar.getAttribute('data-target');
                 setTimeout(() => {
                     bar.style.width = target;
-                }, 200); 
+                }, 300); 
             }
         });
     </script>
