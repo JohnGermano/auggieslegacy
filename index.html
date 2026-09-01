@@ -38,6 +38,18 @@
         .animate-vibrate {
             animation: subtle-vibrate 0.15s infinite ease-in-out;
         }
+
+        /* Golden Sparkle Pulse for Card when Goal is Met */
+        @keyframes gold-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+            70% { box-shadow: 0 0 0 16px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+
+        .goal-reached-card {
+            border-color: #f59e0b !important;
+            animation: gold-pulse 2.5s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -96,37 +108,50 @@
             </p>
         </div>
 
-        <!-- Donation Widget with Flame & Vibration Preview -->
+        <!-- Donation Widget (Goal Exceeded / Bonus Round) -->
         <div class="md:col-span-1">
-            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 sticky top-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-amber-500 goal-reached-card sticky top-8">
                 
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-3 py-1 rounded-full">
+                        🎉 Goal Reached!
+                    </span>
+                </div>
+
                 <h3 class="text-xl font-medium text-slate-900 mb-6 text-center">Support the Fund</h3>
                 
                 <!-- Progress Tracker -->
                 <div class="mb-8">
                     <div class="flex justify-between text-sm mb-3">
-                        <span class="font-semibold text-slate-800 flex items-center gap-1">
-                            $435 raised <span class="animate-bounce">🔥</span>
+                        <span class="font-semibold text-amber-700 flex items-center gap-1">
+                            $500 raised 🔥
                         </span>
                         <span class="text-slate-500 font-medium">Goal: $500</span>
                     </div>
 
-                    <!-- Vibrating Container -->
-                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden relative shadow-inner animate-vibrate">
+                    <!-- Vibrating Container (Overflow Visible for Rocket) -->
+                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-visible relative shadow-inner animate-vibrate">
                         
-                        <!-- Progress Bar with Flame Glow -->
+                        <!-- Progress Bar set to 100% -->
                         <div id="progress-bar" 
                              class="h-4 rounded-full progress-bar-fill relative flex items-center justify-end" 
                              style="width: 0%;" 
-                             data-target="87%">
+                             data-target="100%">
                             
-                            <!-- Flame Tip Highlights -->
+                            <!-- Flame Glow Tip -->
                             <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-amber-400 rounded-full blur-[2px] animate-pulse opacity-90 shadow-[0_0_12px_#f59e0b]"></div>
-                            <div class="absolute right-0 top-1/2 -translate-y-1/2 text-xs translate-x-1 select-none pointer-events-none">🔥</div>
+                            
+                            <!-- Rocket Breaking Through Edge -->
+                            <span class="absolute -right-4 -top-2 text-2xl animate-bounce select-none pointer-events-none drop-shadow-md">
+                                🚀
+                            </span>
                         </div>
 
                     </div>
-                
+                    
+                    <p class="text-xs text-center text-amber-700 font-bold mt-3 animate-pulse">
+                        ⚡ Goal crushed! We’re officially on bonus round power! 🎉
+                    </p>
                 </div>
 
                 <!-- Single Direct Stripe Button -->
