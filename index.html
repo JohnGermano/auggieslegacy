@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Loving Memory of Auggie | Thank You</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#fdf8f6',
+                            100: '#fbeee9',
+                            200: '#f7d9cc',
+                            300: '#efba9e',
+                            400: '#e5936e',
+                            500: '#c66b3d', // Primary Terracotta
+                            600: '#b4552b',
+                            700: '#964223',
+                            800: '#7a3721',
+                            900: '#64301f',
+                        },
+                        warmamber: '#d97706',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        handwriting: ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf8f5;
+            color: #334155;
+        }
+
+        .hero-pattern { 
+            background-color: #FAF6F0; 
+            background-image: radial-gradient(#e2d9cd 1.2px, transparent 1.2px); 
+            background-size: 28px 28px; 
+        }
+
+        /* Flame animation for candles */
+        @keyframes candleFlame {
+            0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+            50% { transform: scale(1.12) rotate(2deg); opacity: 1; filter: drop-shadow(0 0 10px #f59e0b); }
+        }
+
+        .flame-anim {
+            animation: candleFlame 1.8s infinite ease-in-out;
+            transform-origin: center bottom;
+        }
+
+        /* Golden shimmer */
+        @keyframes goldShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .shimmer-gold {
+            background: linear-gradient(90deg, #d97706 0%, #fef3c7 50%, #d97706 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShimmer 4s infinite linear;
+        }
+
+        /* Soft floating hearts animation */
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+
+        .floating-heart {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp 2s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-terracotta-200 selection:text-terracotta-900">
+
+    <!-- Top Announcement Banner -->
+    <div class="bg-gradient-to-r from-terracotta-600 via-amber-600 to-terracotta-600 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center shadow-sm flex items-center justify-center gap-2">
+        <span class="inline-block animate-bounce">🕊️</span>
+        <span>Thank you for honoring Auggie! Our fundraiser reached 100% of its goal for Nationwide Children's NICU.</span>
+        <span class="hidden md:inline-block">❤️️</span>
+    </div>
+
+    <!-- Main Hero Section -->
+    <header class="hero-pattern border-b border-stone-200/80 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-5 py-14 sm:py-20 text-center relative z-10">
+            
+            <!-- Completion Badge -->
+            <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 shadow-sm rounded-full px-4 py-1.5 mb-6 text-amber-800 text-xs sm:text-sm font-semibold tracking-wide">
+                <i class="fa-solid fa-circle-check text-amber-600"></i>
+                <span>FUNDRAISER COMPLETED &bull; $1,075+ RAISED</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl text-stone-800 font-normal tracking-tight mb-4 leading-tight">
+                In Loving Memory of Auggie
+            </h1>
+            <p class="font-serif italic text-lg sm:text-2xl text-terracotta-600 mb-8 max-w-2xl mx-auto">
+                "Loved beyond words, missed beyond measure, remembered every single day."
+            </p>
+
+            <!-- Portrait Frame -->
+            <div class="relative max-w-xs sm:max-w-md mx-auto my-8">
+                <!-- Outer Decorative Frame -->
+                <div class="p-3 bg-white rounded-3xl shadow-xl border border-stone-200 relative group">
+                    <div class="overflow-hidden rounded-2xl aspect-[4/5] bg-stone-100 relative">
+                        <img 
+                            src="auggie1.JPEG" 
+                            alt="Auggie" 
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x750/f7d9cc/7a3721?text=Auggie%27s+Memory';"
+                        >
+                        <!-- Gentle overlay gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-3 left-0 right-0 text-white text-xs font-light tracking-widest uppercase text-center drop-shadow-md">
+                            September 2026 &bull; Nationwide Children's NICU Fighter
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Flowers / Wings Motif Badge -->
+                <div class="absolute -bottom-4 -right-2 sm:-bottom-5 sm:-right-4 bg-white p-3 rounded-2xl shadow-lg border border-amber-100 flex items-center gap-2 text-xs font-semibold text-stone-700">
+                    <span class="text-xl">🌟</span>
+                    <div class="text-left leading-tight">
+                        <p class="text-amber-700 font-bold">100% Impact</p>
+                        <p class="text-[10px] text-stone-500">Gifts Delivered to NICU</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Jump Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mt-10">
+                <a href="#impact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracotta-500 text-white font-medium text-sm hover:bg-terracotta-600 shadow-md hover:shadow-lg transition-all">
+                    <i class="fa-solid fa-gift"></i> See What Was Purchased
+                </a>
+                <a href="#letter" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-stone-700 border border-stone-300 font-medium text-sm hover:bg-stone-50 shadow-sm transition-all">
+                    <i class="fa-solid fa-envelope"></i> Read Our Thank You Note
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto px-5 py-12 space-y-16">
+
+        <!-- Interactive Candle / Heart Tribute Section -->
+        <section class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-stone-200/80 text-center relative overflow-hidden">
+            <div class="max-w-md mx-auto space-y-4">
+                <div class="relative inline-block my-2">
+                    <!-- Candle Icon with Animated Flame -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center border border-amber-200/80 shadow-inner">
+                        <div class="relative text-3xl sm:text-4xl">
+                            <span class="flame-anim inline-block text-amber-500">🕯️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="font-serif text-2xl sm:text-3xl text-stone-800">Light a Virtual Candle for Auggie</h2>
+                <p class="text-sm sm:text-base text-stone-600 font-light">
+                    Join our community in sending warm light, love, and thoughts to Auggie and the NICU families at Nationwide Children's Hospital.
+                </p>
+
+                <!-- Counter and Interactive Button -->
+                <div id="tribute-container" class="pt-2">
+                    <button 
+                        id="candle-btn" 
+                        onclick="lightCandle(event)"
+                        class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-terracotta-500 text-white font-semibold text-base shadow-md hover:shadow-lg hover:from-amber-600 hover:to-terracotta-600 active:scale-95 transition-all flex items-center justify-center gap-2 mx-auto"
+                    >
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Light a Candle / Send Love</span>
+                    </button>
+                    
+                    <p class="text-xs sm:text-sm text-stone-500 mt-4">
+                        <span id="candle-count" class="font-bold text-amber-700 text-base">342</span> candles & hearts lit by friends and family
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section: What We Accomplished Together -->
+        <section id="impact" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600 bg-terracotta-50 px-3 py-1 rounded-full border border-terracotta-200/60">
+                    Community Generosity in Action
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-stone-800">What We Accomplished Together</h2>
+                <p class="text-stone-600 font-light text-base">
+                    Thanks to your generous contributions totaling <strong class="text-amber-800 font-semibold">$1,075+</strong>, we were able to directly provide vital care kits, warmth, and family comfort items to the Nationwide Children's Hospital NICU.
+                </p>
+            </div>
+
+            <!-- Total Stats Banner -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-white p-5 rounded-2xl border border-stone-200/80 shadow-sm">
+                    <div class="text-3xl font-bold text-terracotta-500 mb-1">$1,075+</div>
+                    <div class="text-xs text-stone-500 font-medium uppercase tracking-wider">Funds Raised</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-stone-200/80 shadow-sm">
+                    <div class="text-3xl font-bold text-amber-600 mb-1">10 Days</div>
+                    <div class="text-xs text-stone-500 font-medium uppercase tracking-wider">Auggie's NICU Legacy</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-stone-200/80 shadow-sm">
+                    <div class="text-3xl font-bold text-terracotta-500 mb-1">120+</div>
+                    <div class="text-xs text-stone-500 font-medium uppercase tracking-wider">Items Donated</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-stone-200/80 shadow-sm">
+                    <div class="text-3xl font-bold text-amber-600 mb-1">100%</div>
+                    <div class="text-xs text-stone-500 font-medium uppercase tracking-wider">Sent to NICU</div>
+                </div>
+            </div>
+
+            <!-- Purchased / Donated Items Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Item 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-sm hover:shadow-md transition-all space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-50 text-amber-700 rounded-xl flex items-center justify-center text-xl mb-4 border border-amber-100">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-semibold text-stone-800">NICU Swaddles & Soft Clothing</h3>
+                        <p class="text-xs text-stone-500 mt-1">Specialized preemie gentle cotton wraps designed for delicate skin and easy lead access.</p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 flex justify-between items-center text-xs">
+                        <span class="text-stone-500 font-medium">Quantity Donated:</span>
+                        <span class="font-bold text-terracotta-600 bg-terracotta-50 px-2.5 py-1 rounded-full">35 Sets</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-sm hover:shadow-md transition-all space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-xl mb-4 border border-rose-100">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-semibold text-stone-800">Family Comfort & Care Bundles</h3>
+                        <p class="text-xs text-stone-500 mt-1">Overnight hygiene kits, soothing lotions, and meal cards for parents staying long hours at bedside.</p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 flex justify-between items-center text-xs">
+                        <span class="text-stone-500 font-medium">Quantity Donated:</span>
+                        <span class="font-bold text-terracotta-600 bg-terracotta-50 px-2.5 py-1 rounded-full">25 Care Kits</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-sm hover:shadow-md transition-all space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl mb-4 border border-sky-100">
+                            <i class="fa-solid fa-book-open text-sky-600"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-semibold text-stone-800">Bedside Books & Soothing Toys</h3>
+                        <p class="text-xs text-stone-500 mt-1">Developmental high-contrast storybooks and calming sound devices for infant bonding.</p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 flex justify-between items-center text-xs">
+                        <span class="text-stone-500 font-medium">Quantity Donated:</span>
+                        <span class="font-bold text-terracotta-600 bg-terracotta-50 px-2.5 py-1 rounded-full">40+ Books & Toys</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hospital Appreciation Note Box -->
+            <div class="bg-gradient-to-r from-stone-900 to-stone-800 text-white rounded-2xl p-6 sm:p-8 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <div class="text-amber-400 font-semibold text-xs uppercase tracking-wider flex items-center gap-1.5 justify-center md:justify-start">
+                        <i class="fa-solid fa-hospital"></i> Nationwide Children's Hospital NICU
+                    </div>
+                    <h3 class="font-serif text-xl sm:text-2xl text-stone-100">Direct Delivery to the Dublin & Main NICU Teams</h3>
+                    <p class="text-stone-300 text-xs sm:text-sm font-light max-w-xl">
+                        All items purchased have been formally cataloged and delivered directly to the amazing nursing staff and care teams who supported Auggie and our family during his 10-day stay.
+                    </p>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.nationwidechildrens.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-stone-900 font-semibold text-xs sm:text-sm px-5 py-3 rounded-xl hover:bg-stone-100 transition-all shadow-sm">
+                        About Nationwide NICU <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Thank You Letter Section -->
+        <section id="letter" class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-stone-200/80 relative">
+            <div class="max-w-2xl mx-auto space-y-6 text-stone-700 leading-relaxed font-light text-base sm:text-lg">
+                
+                <div class="border-b border-stone-100 pb-4 mb-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">A Message From Our Hearts</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-stone-800 mt-1">Our Deepest Gratitude</h2>
+                </div>
+
+                <p>
+                    When Auggie entered our lives on September 8, 2026 at Dublin Methodist Hospital, he instantly captured our hearts with his spirited personality and courage. His ten days with us in the Nationwide Children's Hospital NICU transformed our family forever.
+                </p>
+
+                <p>
+                    During the darkest moments of our lives, the doctors, nurses, and staff provided not just world-class medical care, but genuine human warmth, dignity, and compassion. To experience that depth of support is something we will never forget.
+                </p>
+
+                <p>
+                    When we launched this fundraiser in honor of Auggie's memory, we were overwhelmed by the outpouring of love, donations, and kind messages from our friends, family, and community. Crushing our goals together means another family in that very same NICU will feel comforted and supported tonight.
+                </p>
+
+                <blockquote class="border-l-4 border-terracotta-500 pl-6 py-2 italic text-stone-600 bg-stone-50 rounded-r-xl my-6">
+                    "Auggie showed us how much love a little soul can bring into this world. Thank you for helping his light shine bright forever."
+                </blockquote>
+
+                <p>
+                    With all our love and appreciation,
+                </p>
+
+                <!-- Signatures Container -->
+                <div class="pt-6 border-t border-stone-100 mt-8 flex flex-col sm:flex-row items-center justify-between gap-8">
+                    
+                    <!-- Parents Signatures Preview & Placeholder Image -->
+                    <div class="space-y-2 text-center sm:text-left w-full sm:w-auto">
+                        <div class="h-20 flex items-center justify-center sm:justify-start">
+                            <!-- SVG / PNG Signature Representation -->
+                            <div class="font-handwriting text-3xl sm:text-4xl text-terracotta-700 select-none tracking-wide transform -rotate-1">
+                                Ashley & Family
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-400 font-medium">With heartfelt gratitude, Auggie's Parents</p>
+                    </div>
+
+                    <!-- Digital Memory Stamp -->
+                    <div class="p-4 bg-amber-50/80 rounded-2xl border border-amber-200/60 text-center sm:text-right shrink-0">
+                        <div class="text-amber-800 font-serif italic text-sm font-semibold">"Auggie's Honor Fund"</div>
+                        <div class="text-[11px] text-amber-700 font-mono mt-0.5">September 2026 Memorial</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Memorial Video & Ongoing Support Options -->
+        <section class="space-y-10">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="font-serif text-2xl sm:text-3xl text-stone-800">Auggie's Memorial Video</h2>
+                <p class="text-stone-500 text-sm font-light">A brief moment to remember his sweet life and journey.</p>
+            </div>
+
+            <!-- Video Embed Container -->
+            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-stone-900 relative aspect-video max-w-3xl mx-auto">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube-nocookie.com/embed/-fpqRO3Ob9Y?referrerpolicy=strict-origin-when-cross-origin" 
+                    title="In Loving Memory of Auggie" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Ongoing Support Section -->
+            <div class="bg-gradient-to-br from-amber-50/60 via-stone-50 to-terracotta-50/60 rounded-3xl p-6 sm:p-10 border border-amber-200/60 text-center space-y-6">
+                <div class="max-w-md mx-auto space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Future Impact</span>
+                    <h3 class="font-serif text-2xl text-stone-800">Ongoing Ways to Support</h3>
+                    <p class="text-xs sm:text-sm text-stone-600 font-light">
+                        Though our formal campaign is complete, you can continue directly supporting infants and families at Nationwide Children's NICU anytime:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <a href="https://www.amazon.com/registries/gl/guest-view/1N2ZDUT58D41W?ref_=cm_sw_r_apin_ggr-subnav-share_5EFPY16ZSCK57QAVYG9R&language=en-US" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-white hover:bg-amber-50 text-amber-900 border border-amber-200 p-4 rounded-2xl shadow-sm hover:shadow transition-all group text-sm font-medium">
+                        <i class="fa-solid fa-gift text-amber-600 text-lg group-hover:scale-110 transition-transform"></i>
+                        <span>Amazon Gift Card Registry</span>
+                        <i class="fa-solid fa-arrow-right text-xs opacity-50 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <a href="https://www.amazon.com/hz/wishlist/ls/23KTNOGD3471K/ref=nav_wishlist_lists_3" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-white hover:bg-rose-50 text-rose-900 border border-rose-200 p-4 rounded-2xl shadow-sm hover:shadow transition-all group text-sm font-medium">
+                        <i class="fa-solid fa-heart text-rose-500 text-lg group-hover:scale-110 transition-transform"></i>
+                        <span>Nationwide NICU Wishlist</span>
+                        <i class="fa-solid fa-arrow-right text-xs opacity-50 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-200 py-10 text-center text-stone-400 text-xs sm:text-sm">
+        <div class="max-w-4xl mx-auto px-5 space-y-3">
+            <p class="font-serif italic text-stone-600 text-base">In Loving Memory of Auggie</p>
+            <p>&copy; 2026 Created with eternal love and gratitude for family, friends, and Nationwide Children's Hospital.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Candle lighting interactive function
+        let candleCount = 342;
+        let hasLit = false;
+
+        function lightCandle(event) {
+            const btn = document.getElementById('candle-btn');
+            const countEl = document.getElementById('candle-count');
+
+            if (!hasLit) {
+                candleCount++;
+                countEl.textContent = candleCount;
+                hasLit = true;
+
+                // Button state update
+                btn.classList.remove('from-amber-500', 'to-terracotta-500');
+                btn.classList.add('from-emerald-600', 'to-teal-600');
+                btn.innerHTML = `<i class="fa-solid fa-check-circle"></i><span>Candle Lit & Love Sent!</span>`;
+
+                // Spawn floating hearts around cursor/button
+                createFloatingHearts(event);
+            } else {
+                createFloatingHearts(event);
+            }
+        }
+
+        function createFloatingHearts(e) {
+            const container = document.body;
+            const hearts = ['❤️', '🕯️', '✨', '🕊️'];
+
+            for (let i = 0; i < 6; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart text-xl';
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                
+                // Position near click or center screen
+                const x = e.clientX ? e.clientX + (Math.random() * 60 - 30) : window.innerWidth / 2;
+                const y = e.clientY ? e.clientY + (Math.random() * 60 - 30) : window.innerHeight / 2;
+
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+
+                container.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
